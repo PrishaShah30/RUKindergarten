@@ -1,35 +1,10 @@
 package kindergarten;
-
-/**
- * This class represents a Classroom, with:
- * - an SNode instance variable for students in line,
- * - an SNode instance variable for musical chairs, pointing to the last student
- * in the list,
- * - a boolean array for seating availability (eg. can a student sit in a given
- * seat), and
- * - a Student array parallel to seatingAvailability to show students filed into
- * seats
- * --- (more formally, seatingAvailability[i][j] also refers to the same seat in
- * studentsSitting[i][j])
- * 
- * @author Ethan Chou
- * @author Kal Pandit
- * @author Maksims Kurjanovics Kravcenko
- */
 public class Classroom {
     private SNode studentsInLine; // when students are in line: references the FIRST student in the LL
     private SNode musicalChairs; // when students are in musical chairs: references the LAST student in the CLL
     private boolean[][] seatingLocation; // represents the classroom seats that are available to students
     private Student[][] studentsSitting; // when students are sitting in the classroom: contains the students
-
-    /**
-     * Constructor for classrooms. Do not edit.
-     * 
-     * @param l passes in students in line
-     * @param m passes in musical chairs
-     * @param a passes in availability
-     * @param s passes in students sitting
-     */
+    
     public Classroom(SNode l, SNode m, boolean[][] a, Student[][] s) {
         studentsInLine = l;
         musicalChairs = m;
@@ -72,8 +47,7 @@ public class Classroom {
      * method all students are in line in alphabetical order.
      * 
      * DO NOT implement a sorting method, PRACTICE add to front.
-     * 
-     * @param filename the student information input file
+     * filename the student information input file
      */
     public void enterClassroom(String filename) {
 
@@ -112,8 +86,7 @@ public class Classroom {
      * 4. Update seatingLocation with the boolean values read from the input file
      * 
      * This method does not seat students on the seats.
-     * 
-     * @param seatingChart the seating chart input file
+     * seatingChart the seating chart input file
      */
     public void setupSeats(String seatingChart) {
         StdIn.setFile(seatingChart);
@@ -211,8 +184,7 @@ public class Classroom {
     /**
      * 
      * Removes a random student from the musicalChairs.
-     * 
-     * @param size represents the number of students currently sitting in
+     * size represents the number of students currently sitting in
      *             musicalChairs
      * 
      *             1. Select a random student to be removed from the musicalChairs
@@ -265,8 +237,7 @@ public class Classroom {
      * Inserts a single student, eliminated from musical chairs, to the
      * studentsInLine list.
      * The student is inserted in ascending order by height (shortest to tallest).
-     * 
-     * @param studentToInsert the student eliminated from chairs to be inserted into
+     * studentToInsert the student eliminated from chairs to be inserted into
      *                        studentsInLine
      */
     public void insertByHeight(Student studentToInsert) {
